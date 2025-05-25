@@ -1,23 +1,12 @@
 name: Email in Action
-on: [push, workflow_dispatch]
+on: 
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      
-      - name: 24f1002855@ds.study.iitm.ac.in - Custom Step
-        run: |
-          echo "This step contains my email address"
-          echo "Current date: $(date)"
-      
-      - name: Run Tests
-        run: |
-          echo "Running project tests..."
-          python -m pytest
+      - name: Step with email 24f1002855@ds.study.iitm.ac.in
+        run: echo "Workflow executed successfully"
